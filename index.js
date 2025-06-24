@@ -3,14 +3,10 @@ const dotenv = require('dotenv');
 const cors = require('cors');
 const authRoutes = require('./src/routes/auth.routes');
 
-
-app.use(cors({
-  origin: '*', 
-  credentials: true
-}));
 dotenv.config();
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 
 app.use('/api/auth', authRoutes);
