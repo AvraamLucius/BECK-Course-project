@@ -2,7 +2,12 @@ const express = require('express');
 const dotenv = require('dotenv');
 const cors = require('cors');
 const authRoutes = require('./src/routes/auth.routes');
+import cors from 'cors';
 
+app.use(cors({
+  origin: 'https://course-project-it.netlify.app', 
+  credentials: true
+}));
 dotenv.config();
 const app = express();
 
